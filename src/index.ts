@@ -166,7 +166,7 @@ class Logger {
     private root: Logger;
     private options: LogOptions = {};
 
-    constructor(message?: string, options?: LogOptions, parent?: Logger) {
+    constructor(message?: string, options: LogOptions = {}, parent?: Logger) {
         this.entry = {
             message: this.getMessage(message, {
                 ...options.cascadingStyles,
@@ -183,7 +183,7 @@ class Logger {
         }
     }
 
-    private getMessage(message: string, options?: StyleOptions): string {
+    private getMessage(message: string, options: StyleOptions): string {
         let prefix: string[] = [];
         if (options?.color) prefix.push(ANSI.fg[options.color]);
         if (options?.background) prefix.push(ANSI.bg[options.background]);
@@ -215,104 +215,110 @@ class Logger {
         return new Logger(message, mergedOptions, this);
     }
 
-    red(message: string, options?: LogOptionsWithoutColor): Logger {
+    red(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'red' },
         });
     }
-    brightRed(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightRed(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightRed' },
         });
     }
 
-    yellow(message: string, options?: LogOptionsWithoutColor): Logger {
+    yellow(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightYellow' },
         });
     }
-    brightYellow(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightYellow(
+        message: string,
+        options: LogOptionsWithoutColor = {},
+    ): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'yellow' },
         });
     }
 
-    green(message: string, options?: LogOptionsWithoutColor): Logger {
+    green(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'green' },
         });
     }
-    brightGreen(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightGreen(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightGreen' },
         });
     }
 
-    blue(message: string, options?: LogOptionsWithoutColor): Logger {
+    blue(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'blue' },
         });
     }
-    brightBlue(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightBlue(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightBlue' },
         });
     }
 
-    magenta(message: string, options?: LogOptionsWithoutColor): Logger {
+    magenta(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'magenta' },
         });
     }
-    brightMagenta(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightMagenta(
+        message: string,
+        options: LogOptionsWithoutColor = {},
+    ): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightMagenta' },
         });
     }
 
-    cyan(message: string, options?: LogOptionsWithoutColor): Logger {
+    cyan(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'cyan' },
         });
     }
-    brightCyan(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightCyan(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightCyan' },
         });
     }
 
-    white(message: string, options?: LogOptionsWithoutColor): Logger {
+    white(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'white' },
         });
     }
-    brightWhite(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightWhite(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightWhite' },
         });
     }
 
-    black(message: string, options?: LogOptionsWithoutColor): Logger {
+    black(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'black' },
         });
     }
-    brightBlack(message: string, options?: LogOptionsWithoutColor): Logger {
+    brightBlack(message: string, options: LogOptionsWithoutColor = {}): Logger {
         return this.log(message, {
             ...options,
             styles: { ...options.styles, color: 'brightBlack' },

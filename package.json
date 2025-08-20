@@ -1,0 +1,39 @@
+{
+    "name": "@esdotgd/treelogger",
+    "version": "0.1.0",
+    "description": "Easy tree-style logging.",
+    "keywords": [
+        "logging",
+        "log",
+        "tree"
+    ],
+    "homepage": "https://github.com/esdotgd/treelogger",
+    "bugs": {
+        "url": "https://github.com/esdotgd/treelogger/issues"
+    },
+    "author": "Zeke Martin <zeke@es.gd> (https://es.gd)",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/esdotgd/treelogger.git"
+    },
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "main": "dist/index.js",
+    "license": "ISC",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "ci": "npm run build && npm run check-format",
+        "format": "prettier --write .",
+        "check-format": "prettier --check .",
+        "release": "changeset version && changeset publish",
+        "prepublishOnly": "npm run ci"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.29.5",
+        "prettier": "^3.6.2",
+        "typescript": "^5.9.2"
+    }
+}

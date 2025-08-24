@@ -1,5 +1,11 @@
 # @esdotgd/treelogger
 
+## 0.1.3
+
+### Patch Changes
+
+- b7c4536: rebuild
+
 ## 0.1.2
 
 ### Patch Changes

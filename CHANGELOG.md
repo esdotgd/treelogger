@@ -1,5 +1,11 @@
 # @esdotgd/treelogger
 
+## 0.1.2
+
+### Patch Changes
+
+- 3a247aa: clear cache
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,0 +1,5 @@
+---
+'@esdotgd/treelogger': patch
+---
+
+rebuild
